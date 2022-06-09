@@ -1,5 +1,6 @@
-const parse = require('csv-parse');
+const {parse} = require('csv-parse');
 const fs = require('fs');
+const path = require("path")
 
 const habitablePlanets = [];
 
@@ -27,7 +28,7 @@ NB: This promise will block our code from sending any other request before compl
 const loadPlanetsData = async()=>{
     // This promise is used to check and tell us when the planets have been succsfully loaded
     return new Promise((resolve, reject)=>{
-        fs.createReadStream('../../data/kepler_data.csv')
+        fs.createReadStream(path.join(__dirname, '..', '..', 'data', 'kepler_data.csv'))
         .pipe(parse({
             comment: '#',
             columns: true,
