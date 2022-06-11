@@ -49,8 +49,11 @@ const loadPlanetsData = async()=>{
     })
 }
 
+const getAllPlanets = ()=>{
+    return habitablePlanets
+}
 
 module.exports = {
     loadPlanetsData,
-    planets: habitablePlanets,
+    getAllPlanets,
 }

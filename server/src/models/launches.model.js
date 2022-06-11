@@ -17,6 +17,11 @@ launches.set(launch.flightNumber, launch)
 // Get all launches
 // launches.get()
 
+// Build a Data Acess Layer for the launches
+const getAllLaunches = ()=>{
+    return Array.from(launches.values())
+}
+
 module.exports={
-    launches,
+    getAllLaunches,
 }
