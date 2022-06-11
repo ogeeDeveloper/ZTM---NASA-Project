@@ -29,7 +29,7 @@ app.use(planetRouter)
 app.use(launchesRouter)
 
 // set the "/" to load the launch route so that the user doesnt have to type index.html
-app.get('/',(req,res)=>{
+app.get('/*',(req,res)=>{
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
 })
 
